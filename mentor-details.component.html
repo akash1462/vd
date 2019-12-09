@@ -1,0 +1,61 @@
+<div class="col-lg-10 mx-auto">
+        <div class="card mt-5">
+    
+          <div class="row ml-3 mr-3 mt-3">
+    
+            <h4>Additional Mentor Details</h4>
+    
+          </div>
+          <form [formGroup]="signupForm" (submit)="addMentor(signupForm.value)">
+            <div class="md-20">
+    
+              <div class="row ml-2 mr-2 header">
+                <div class="col-lg-6 col-md-12 col-12 heading">
+                  <div>
+                    <label for="linkedinURL">Linkedin URL</label>
+                  </div>
+                  <input class="form-control" type="text" id="linkedinURL"
+                    formControlName="linkedinURL" [formControl]="linkedinURL" placeholder="Enter Linkedin URL">
+                    <div class="invalid" *ngIf="linkedinURL.invalid && linkedinURL.errors.required && linkedinURL.touched">Linkedin URL is required</div>    
+                </div>
+              </div>
+    
+              <div class="row ml-2 mr-2 header">
+                <div class="col-lg-6 col-md-6 heading">
+                  <div>
+                    <label for="yearsOfExperience">Years Of Experience</label>
+                  </div>
+                  <input class="form-control" type="text" id="yearsOfExperience"
+                    formControlName="yearsOfExperience" [formControl]="yearsOfExperience" placeholder="Enter Years Of Experience">
+                    <div class="invalid" *ngIf="yearsOfExperience.invalid && yearsOfExperience.errors.required && yearsOfExperience.touched">Years Of Experience is required</div>
+                </div>
+              </div>
+
+
+              <div class="row ml-2 mr-2 header">
+                <div class="col-lg-6 col-md-6 heading">
+                        <div>
+                                <label for="timeslot">Timeslot</label>
+                              </div>
+                              <select class="form-control" formControlName="timeslot" [formControl]="timeslot" placeholder="timeslot" id="timeslot">
+                                    <option disabled selected value>Select Timeslot</option>
+                                    <option value="10:00-12:00">10:00-12:00</option>
+                                    <option value="14:00-16:00">14:00-16:00</option>
+                                    <option value="17:00-19:00">17:00-19:00</option>
+                                    <option value="20:00-22:00">20:00-22:00</option>
+                  
+                                </select>
+    
+                </div>
+              </div>
+
+    
+              <div class="row ml-2 mr-2 heading">
+                <div class="col-6 ">
+                  <button type="submit" class="btn btn-blue" [disabled]="!signupForm.valid">Signup</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
